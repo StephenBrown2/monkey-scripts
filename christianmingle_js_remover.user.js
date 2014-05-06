@@ -39,4 +39,15 @@ function popup_profiles()
                  });
 }
 
+function enablerightclick()
+{
+    var imgs = $xpath('//*[@id="gallery-view"]/table/tbody/tr/td/a/img');
+    imgs.forEach(function(img)
+                 {
+                     img.removeAttribute('onmousedown');
+                 });
+}
+                 
 popup_profiles();
+
+enablerightclick();
