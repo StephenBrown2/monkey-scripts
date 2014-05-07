@@ -2,7 +2,7 @@
 // @name         ChristianMingle javascript remover
 // @namespace    stephenbrown2.christianmingle
 // @version      0.1
-// @description  Remove unnecessary javascript from OKCupid.com pages, replacing it with proper links. Based on http://userscripts.org/scripts/show/29658
+// @description  Remove unnecessary javascript from ChristianMingle.com pages, replacing it with proper links. Based on http://userscripts.org/scripts/show/29658
 // @match        http://www.christianmingle.com/*
 // @copyright    2014+, Stephen Brown II
 // @license      GNU GPL v3.0 or later. http://www.gnu.org/copyleft/gpl.html
@@ -28,6 +28,8 @@ function $xpath(p, context)
 //modules
 function popup_profiles()
 {
+    // Unfortunately, this does not work for the "Secret Adminrer" slideshow,
+    // as it is loaded before that extra html is ready.
     var pops = $xpath('//a[starts-with(@href, "javascript:popup_profile")]');
     pops.forEach(function(link)
                  {
